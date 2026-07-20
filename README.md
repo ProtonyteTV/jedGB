@@ -49,7 +49,7 @@ The emulator architecture is partitioned into cleanly decoupled components, util
 
 ```bash
 # Clone the repository
-git clone https://github.com/jedPlatforms/jedGB.git
+git clone https://github.com/ProtonyteTV/jedGB.git
 cd jedGB
 
 # Create a build directory
