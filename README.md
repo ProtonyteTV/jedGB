@@ -38,6 +38,28 @@ The emulator architecture is partitioned into cleanly decoupled components, util
 
 ---
 
+## 📊 Current Emulation State & Known Limitations
+
+While **jedGB** possesses a clean and highly structured architectural foundation, it is an active project with several known hardware behaviors currently undergoing refinement. 
+
+### 🚫 Known Hardware Limitations (Roadmap)
+1. **PPU Mode Timings & STAT Interrupts**
+   * *Current Status:* Scanline iteration (`ly`) is handled via absolute cycle steps inside the system bus loop, triggering V-Blank blindly at line 144.
+   * *Impact:* Lacks explicit **Mode 0 (H-Blank)**, **Mode 2 (OAM Search)**, and **Mode 3 (Pixel Transfer)** cycling. Games relying on mid-scanline visual effects or `STAT` interrupt checks (e.g., *Super Mario Land*) will encounter graphical glitches or frame locks.
+2. **Memory Blocking / Lockouts**
+   * *Current Status:* The CPU retains fully unrestricted read/write access to Video RAM (VRAM) and Object Attribute Memory (OAM) at all times.
+   * *Impact:* On real hardware, VRAM is locked during Mode 3, and OAM is locked during Modes 2 and 3. Emulating these locks is required for perfect visual synchronization.
+3. **Instant OAM DMA Transfers**
+   * *Current Status:* Writing to register `0xFF46` triggers an instantaneous 160-byte copy from system memory straight to OAM.
+   * *Impact:* A true Game Boy delays this transfer across **160 machine cycles**, lockouts out standard CPU memory operations during execution. 
+4. **Hardware Timer Subsystem (DIV / TIMA)**
+   * *Current Status:* Memory addresses for `DIV` (`0xFF04`), `TIMA` (`0xFF05`), `TMA` (`0xFF06`), and `TAC` (`0xFF07`) are decoded but do not increment automatically.
+   * *Impact:* Many game loops pool the timer register to advance game logic or manage frame rates. Implementing the clock divider network is a high priority.
+5. **Interactive Joypad Matrix Mapping**
+   * *Current Status:* Standard system bus routing exists for address `0xFF00`, but structural direction/action line matrix selection is incomplete.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -49,7 +71,7 @@ The emulator architecture is partitioned into cleanly decoupled components, util
 
 ```bash
 # Clone the repository
-git clone https://github.com/ProtonyteTV/jedGB.git
+git clone https://github.com/jedPlatforms/jedGB.git
 cd jedGB
 
 # Create a build directory
