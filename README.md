@@ -28,6 +28,8 @@ The emulator architecture is partitioned into cleanly decoupled core components 
                | 4-Ch Sound Synth  | | MBC3 + RAM Save   |
                +-------------------+ +-------------------+
 
+```
+
 ### Core Components
 *   **C Developer API (`jedgb_api.h` / `jedgb_api.cpp`)**: Exposes an `extern "C"` ABI for seamless integration into custom frontends. Supports direct file path loading, in-memory byte buffer loading (for mobile URIs), framebuffer extraction, audio buffer streaming, and native desktop ROM picker dialogs.
 *   **CPU Interpreter (`cpu.cpp`)**: Complete implementation of the Game Boy instruction set, accurate flag behaviors, call/stack management, interrupt servicing prioritization, and precise tracking of the hardware `HALT` bug condition.
@@ -77,7 +79,6 @@ Provide the target Game Boy ROM (`.gb` or `.dmg`) path as the primary launch arg
 
 ```bash
 ./jedGB path/to/your/game.gb
-```
 
 ---
 
