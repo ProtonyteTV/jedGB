@@ -10,10 +10,6 @@ A lightweight, clean, cross-platform Game Boy (DMG-01) emulator engine and devel
 
 The emulator architecture is partitioned into cleanly decoupled core components wrapped by an `extern "C"` API interface (`jedgb_api.h`), allowing the engine to run as a standalone SDL2 application or as an embedded library inside custom developer frontends:
 
-## 🛠️ Architectural Blueprint
-
-The emulator architecture is partitioned into cleanly decoupled core components wrapped by a C API interface (`jedgb_api.h`), allowing the engine to run as a standalone SDL2 application or as an embedded library inside custom developer frontends:
-
 ```
                  +-----------------------------------+
                 |         Frontend / Host           |
