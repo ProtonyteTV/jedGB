@@ -82,16 +82,15 @@ void PPU::render_scanline(uint8_t ly) {
     uint8_t wy = bus.read(0xFF4A);
     int16_t wx = static_cast<int16_t>(bus.read(0xFF4B)) - 7;
 
-    // Check if the window is visible on this scanline
     if (window_enable && ly >= wy && wx < 160) {
         uint16_t win_map_base = (lcdc & 0x40) ? 0x9C00 : 0x9800;
         bool unsigned_addressing = (lcdc & 0x10) != 0;
 
-        uint8_t win_y = window_line; // Use the internal counter, NOT (ly - wy)
+        uint8_t win_y = window_line; 
         uint8_t tile_row = win_y / 8;
 
         for (int x = 0; x < 160; ++x) {
-            if (x < wx) continue; // Skip pixels left of Window start
+            if (x < wx) continue; 
 
             uint8_t win_x = x - wx;
             uint8_t tile_col = win_x / 8;
@@ -117,7 +116,7 @@ void PPU::render_scanline(uint8_t ly) {
             frame_buffer[ly * 160 + x] = get_color_from_palette(color_idx, bgp);
         }
         
-        window_line++; // Increment counter ONLY when the window actually draws a line
+        window_line++; 
     }
 
     // -------------------------------------------------------------------------
@@ -172,9 +171,8 @@ void PPU::render_sprites(uint8_t ly) {
             int bit_idx = x_flip ? x : (7 - x);
             uint8_t color_idx = (((byte2 >> bit_idx) & 1) << 1) | ((byte1 >> bit_idx) & 1);
 
-            if (color_idx == 0) continue; // Color index 0 is transparent on sprites
+            if (color_idx == 0) continue; 
 
-            // If priority bit is set, sprite only displays over BG color index 0
             if (priority) {
                 uint32_t current_pixel = frame_buffer[ly * 160 + pixel_x];
                 uint32_t bgp_color_0 = get_color_from_palette(0, bus.read(0xFF47));
@@ -187,17 +185,31 @@ void PPU::render_sprites(uint8_t ly) {
 }
 
 void PPU::tick(int cycles) {
-    uint8_t current_ly = bus.read(0xFF44);
-
-    // Track line changes so we only render the scanline ONCE per line
-    if (current_ly != last_ly) {
-        if (current_ly == 0) {
-            window_line = 0; // Reset the window internal counter at frame start
-        }
-
-        if (last_ly < 144) {
-            render_scanline(last_ly);
-        }
-        last_ly = current_ly;
+    uint8_t lcdc = bus.read(0xFF40);
+    
+    // If the LCD is turned off, reset the tracking variables
+    if (!(lcdc & 0x80)) {
+        last_ly = 0;
+        window_line = 0;
+        last_mode = 0;
+        return;
     }
+
+    uint8_t current_ly = bus.read(0xFF44);
+    uint8_t stat = bus.read(0xFF41);
+    uint8_t current_mode = stat & 0x03;
+
+    // Reset the window internal counter at the start of a new frame
+    if (current_ly == 0 && last_ly != 0) {
+        window_line = 0; 
+    }
+
+    // Render the scanline exactly when entering Mode 0 (H-Blank)
+    // This catches any mid-line register updates made during Mode 2/3!
+    if (current_mode == 0 && last_mode == 3) {
+        render_scanline(current_ly);
+    }
+
+    last_ly = current_ly;
+    last_mode = current_mode;
 }

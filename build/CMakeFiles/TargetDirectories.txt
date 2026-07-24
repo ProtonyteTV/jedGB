@@ -1,0 +1,3 @@
+C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir
+C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/edit_cache.dir
+C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/rebuild_cache.dir

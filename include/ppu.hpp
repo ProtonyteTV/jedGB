@@ -18,7 +18,11 @@ private:
 
     void render_scanline(uint8_t ly);
     void render_sprites(uint8_t ly);
+    
+    // Tracking variables for accurate rendering
     uint8_t last_ly{0xFF};
     uint8_t window_line{0};
+    uint8_t last_mode{0}; // Tracks previous PPU mode for edge detection
+    
     uint32_t get_color_from_palette(uint8_t color_idx, uint8_t palette);
 };

@@ -1,0 +1,19 @@
+# ninja log v7
+65	1458	8065589239749954	CMakeFiles/jedGB.dir/src/apu.cpp.obj	98fca2f355047471
+50	1716	8065589239588996	CMakeFiles/jedGB.dir/src/ppu.cpp.obj	e41501543e9c5fe4
+29	1847	8065589239387255	CMakeFiles/jedGB.dir/src/bus.cpp.obj	989c0beeb11b4564
+38	1922	8065589239387255	CMakeFiles/jedGB.dir/src/cpu.cpp.obj	cf852878c19ecf8a
+58	1966	8065589239678949	CMakeFiles/jedGB.dir/src/cartridge.cpp.obj	62adcd33006dbec
+22	2317	8065582305116366	CMakeFiles/jedGB.dir/src/main.cpp.obj	3ce4f72ddc8cded8
+2318	3152	8065582328078916	jedGB.exe	3ab5045984f088fb
+71	1655	8065590842473502	CMakeFiles/jedGB.dir/src/apu.cpp.obj	abd5df158cf750de
+54	1900	8065590842313572	CMakeFiles/jedGB.dir/src/ppu.cpp.obj	b287f3513b44cd49
+38	2020	8065590842144118	CMakeFiles/jedGB.dir/src/bus.cpp.obj	bfbddc3859903ea
+47	2089	8065590842235039	CMakeFiles/jedGB.dir/src/cpu.cpp.obj	30d6096a45e0bb5b
+63	2109	8065590842403542	CMakeFiles/jedGB.dir/src/cartridge.cpp.obj	e5442771d032ef67
+28	3143	8065590841990146	CMakeFiles/jedGB.dir/src/main.cpp.obj	3ce4f72ddc8cded8
+1656	3208	8065590858290758	CMakeFiles/jedGB.dir/src/jedgb_api.cpp.obj	440db33a797a01d6
+1900	3641	8065590860769297	CMakeFiles/jedGB.dir/src/tinyfiledialogs.c.obj	8d3ec98fe9c2807a
+3643	4472	8065590878202942	jedGB.exe	251f57cf2b4b31e3
+34	1984	8065591993955027	CMakeFiles/jedGB.dir/src/main.cpp.obj	3ce4f72ddc8cded8
+1985	2812	8065592013466745	jedGB.exe	251f57cf2b4b31e3

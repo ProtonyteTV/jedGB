@@ -1,0 +1,50 @@
+[
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\main.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\main.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/main.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\bus.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\bus.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/bus.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/bus.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\cpu.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\cpu.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/cpu.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/cpu.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\ppu.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\ppu.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/ppu.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/ppu.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\cartridge.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\cartridge.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/cartridge.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/cartridge.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\apu.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\apu.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/apu.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/apu.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -std=gnu++20 -o CMakeFiles\\jedGB.dir\\src\\jedgb_api.cpp.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\jedgb_api.cpp",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/jedgb_api.cpp",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/jedgb_api.cpp.obj"
+},
+{
+  "directory": "C:/Users/proto/Documents/GitHub/jedGB/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -IC:/Users/proto/Documents/GitHub/jedGB/include -isystem C:/msys64/ucrt64/include/SDL2 -g -o CMakeFiles\\jedGB.dir\\src\\tinyfiledialogs.c.obj -c C:\\Users\\proto\\Documents\\GitHub\\jedGB\\src\\tinyfiledialogs.c",
+  "file": "C:/Users/proto/Documents/GitHub/jedGB/src/tinyfiledialogs.c",
+  "output": "C:/Users/proto/Documents/GitHub/jedGB/build/CMakeFiles/jedGB.dir/src/tinyfiledialogs.c.obj"
+}
+]

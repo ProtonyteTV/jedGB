@@ -1,4 +1,3 @@
-// cartridge.hpp
 #pragma once
 #include <string>
 #include <vector>
@@ -7,9 +6,10 @@
 class Cartridge {
 public:
     Cartridge() = default;
-    ~Cartridge(); // Automatically save on exit
+    ~Cartridge(); 
 
     bool load_from_file(const std::string& filename);
+    bool load_from_buffer(const uint8_t* buffer, size_t size); // New buffer loader
     void save_ram_to_file();
     void load_ram_from_file();
 
@@ -21,7 +21,7 @@ public:
 
 private:
     std::vector<uint8_t> rom_data;
-    std::vector<uint8_t> ram_data; // 32KB max for MBC3 (4 banks x 8KB)
+    std::vector<uint8_t> ram_data; 
     std::string title;
     std::string save_filename;
 
